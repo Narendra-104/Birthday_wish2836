@@ -79,6 +79,30 @@
 <br><br>
     <button onclick="showPopup()">🎁 Click Here</button>
 <script>
+    <div id="popup" class="popup">
+    <div class="popup-content">
+        <h2>🎉 Happy Birthday ❤️</h2>
+        <p>You are very special 💖✨</p>
+         <p>“वाढदिवसाच्या खूप खूप शुभेच्छा माझ्या प्रिये ❤️
+तू माझ्या आयुष्यात आलीस आणि सगळं सुंदर झालं 💫
+तुझ्यासोबत घालवलेला प्रत्येक क्षण माझ्यासाठी खास आहे 💖
+आणि आतापर्यंत मला सपोर्ट करत होतीस, तसंच पुढेही करत रहा ❤️✨</p>
+        <span class="heart">💖</span>
+        <br><br>
+        <button onclick="closePopup()">Close</button>
+    </div>
+</div>
+    <script>
+// 🎵 Tap anywhere music
+let isPlaying = false;
+function startMusic() {
+    if (!isPlaying) {
+        let music = document.getElementById("bgMusic");
+        music.play();
+        isPlaying = true;
+    }
+}
+
 let index = 0;
 let slides = document.getElementsByClassName("slide");
 
@@ -132,21 +156,6 @@ body {
     box-shadow: 0 0 10px pink;
 }
 </style>
-
-<div id="popup" class="popup">
-    <div class="popup-content">
-        <h2>🎉 Happy Birthday ❤️</h2>
-        <p>You are very special 💖✨</p>
-         <p>“वाढदिवसाच्या खूप खूप शुभेच्छा माझ्या प्रिये ❤️
-तू माझ्या आयुष्यात आलीस आणि सगळं सुंदर झालं 💫
-तुझ्यासोबत घालवलेला प्रत्येक क्षण माझ्यासाठी खास आहे 💖
-आणि आतापर्यंत मला सपोर्ट करत होतीस, तसंच पुढेही करत रहा ❤️✨</p>
-        <span class="heart">💖</span>
-        <br><br>
-        <button onclick="closePopup()">Close</button>
-    </div>
-</div>
-
 <style>
     
 .popup {
