@@ -105,11 +105,12 @@ function startMusic() {
 }
 
 let index = 0;
-let slides = document.getElementsByClassName("slide");
 
 function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+
     for (let i = 0; i < slides.length; i++) {
-        slides[i].classList.remove("active");
+        slides[i].style.display = "none";
     }
 
     index++;
@@ -117,10 +118,14 @@ function showSlides() {
         index = 1;
     }
 
-    slides[index - 1].classList.add("active");
+    slides[index - 1].style.display = "block";
 
-    setTimeout(showSlides, 2000); // change every 2 sec
+    setTimeout(showSlides, 2000);
 }
+
+window.onload = function() {
+    showSlides();
+};
 
 showSlides();
 </script>
