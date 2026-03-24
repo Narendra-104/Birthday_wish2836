@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Birthday 🎉</title>
+
+    <style>
+        body {
+            margin: 0;
+            text-align: center;
+            font-family: Arial;
+            background: linear-gradient(45deg, #ff6ec4, #7873f5);
+            color: white;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 60px;
+            margin-top: 100px;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px white; }
+            to { text-shadow: 0 0 30px yellow; }
+        }
+
+        p {
+            font-size: 24px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            background: white;
+            color: black;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .balloon {
+            position: absolute;
+            bottom: -100px;
+            width: 50px;
+            height: 70px;
+            background: red;
+            border-radius: 50%;
+            animation: float 6s infinite;
+        }
+
+        @keyframes float {
+            from { transform: translateY(0); }
+            to { transform: translateY(-100vh); }
+        }
+    </style>
+</head>
+
+<audio id="bgMusic" autoplay loop muted>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+window.onload = function() {
+    let music = document.getElementById("bgMusic");
+
+    // Try to unmute and play automatically
+    setTimeout(() => {
+        music.muted = false;
+        music.play().catch(() => {
+            console.log("Autoplay blocked");
+        });
+    }, 1000);
+};
+</script>
+    <h1>🎉 Happy Birthday Dear
+         ❤️</h1>
+    <p>Wishing you endless happiness ✨</p>
+
+<!-- Photo (Centered) -->
+<div class="slideshow">
+    <img class="slide active" src="photo1.jpeg">
+    <img class="slide" src="photo2.jpeg">
+    <img class="slide" src="photo3.jpeg">
+    <img class="slide" src="photo4.jpeg">
+    <img class="slide" src="photo5.jpeg">
+</div>
+<br><br>
+<script>
+let index = 0;
+let slides = document.getElementsByClassName("slide");
+
+function showSlides() {
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+    }
+
+    index++;
+    if (index > slides.length) {
+        index = 1;
+    }
+
+    slides[index - 1].classList.add("active");
+
+    setTimeout(showSlides, 2000); // change every 2 sec
+}
+
+showSlides();
+</script>
+<style>
+.slideshow {
+    position: relative;
+    width: 250px;
+    margin: auto;
+}
+
+.slide {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 0 15px pink;
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+</style>
+
+<!-- Button -->
+<button onclick="showPopup()">🎁 Click Here</button>
+<style>
+body {
+    text-align: center;
+}
+
+.photo {
+    width: 250px;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0 0 10px pink;
+}
+</style>
+
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <h2>🎉 Happy Birthday ❤️</h2>
+        <p>You are very special 💖✨</p>
+         <p>“वाढदिवसाच्या खूप खूप शुभेच्छा माझ्या प्रिये ❤️
+तू माझ्या आयुष्यात आलीस आणि सगळं सुंदर झालं 💫
+तुझ्यासोबत घालवलेला प्रत्येक क्षण माझ्यासाठी खास आहे 💖
+आणि आतापर्यंत मला सपोर्ट करत होतीस, तसंच पुढेही करत रहा ❤️✨</p>
+        <span class="heart">💖</span>
+        <br><br>
+        <button onclick="closePopup()">Close</button>
+    </div>
+</div>
+
+<style>
+    
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: white;
+    color: black;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    animation: zoomIn 0.5s ease;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+.heart {
+    font-size: 50px;
+    display: inline-block;
+    animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.2); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes beat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+</style>
+
+<script>
+function showPopup() {
+    document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+    
+}
+</script>
+    <!-- Music -->
+    <audio id="music" autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-happyrock.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function surprise() {
+            alert("You are special 💖 Stay happy always!");
+        }
+
+        // Create balloons
+        for (let i = 0; i < 15; i++) {
+            let b = document.createElement("div");
+            b.className = "balloon";
+            b.style.left = Math.random() * 100 + "vw";
+            b.style.background = `hsl(${Math.random()*360},100%,60%)`;
+            b.style.animationDuration = (3 + Math.random() * 3) + "s";
+            document.body.appendChild(b);
+        }
+    </script>
+
+</body>
+</html>
